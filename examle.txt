@@ -1,0 +1,24 @@
+# # I need ubuntu server using terraform
+
+ terraform {
+   required_providers {
+     aws = {
+       source = "hashicorp/aws"
+       version = "5.40.0"
+     }
+   }
+ }
+
+ provider "aws" {
+   region = "us-east-2"
+   shared_config_files      = ["/home/ubuntu/.aws/config"]
+   shared_credentials_files = ["/home/ubuntu/.aws/credentials"]
+   profile                  = "omi"
+
+ }
+
+ resource "aws_instance" "my_instance" {
+   ami = "ami-0f5daaa3a7fb3378b"
+   instance_type = "t3.micro"
+   key_name = "windows_global_key"
+ }
