@@ -4,7 +4,7 @@
    required_providers {
      aws = {
        source = "hashicorp/aws"
-       version = "5.40.0"
+       version = "1.7.5"
      }
    }
  }
@@ -19,6 +19,6 @@
 
  resource "aws_instance" "my_instance" {
    ami = "ami-0f5daaa3a7fb3378b"
-   instance_type = "t3.micro"
+   instance_type = "t2.micro"
    key_name = "windows_global_key"
  }
